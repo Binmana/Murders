@@ -1,0 +1,10 @@
+library(tidyverse)
+murders<-read_csv("data/murders.csv")
+class(murders)
+str(murders)
+head(murders)
+murders<-murders%>% 
+  mutate(region=factor(region),rate=total/population)
+head(murders)
+save(murders,file="rdas/murders.rda")
+?source
